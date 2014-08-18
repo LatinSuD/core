@@ -164,7 +164,7 @@ class RepairLegacyStorages extends BasicEmitter {
 		}
 
 		// check for md5 ids, not in the format "prefix::"
-		$sql = 'SELECT COUNT(*) `c` FROM `*PREFIX*storages`'
+		$sql = 'SELECT COUNT(*) AS "c" FROM `*PREFIX*storages`'
 			. ' WHERE `id` NOT LIKE \'%::%\'';
 		$result = $this->connection->executeQuery($sql);
 		$row = $result->fetch();
